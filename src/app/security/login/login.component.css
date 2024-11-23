@@ -1,6 +1,12 @@
 button{
     background-color: #CF1A1A;
     border: none;
+    width: 50%;
+}
+
+button .registrar{
+    background-color: rgb(172, 172, 172);
+    color: #CF1A1A;
 }
 
 h1{
@@ -55,7 +61,10 @@ form input[type='checkbox']{
     justify-content: center;
     margin-right: 0%;
 }
-
+.naopossuiconta{
+    margin-top: 15px;
+    margin-bottom: 1px;
+}
 .mb-3 form-check{
     justify-content: center;
 }

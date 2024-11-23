@@ -3,18 +3,22 @@
         <H1>NadTube</H1>
         <p>Sua nova plataforma de vídeos!</p>
     </div>
-    <form>
-
+    <form [formGroup]="formLogin">
         <div class="mb-3">
         <label for="exampleInputEmail1" class="form-label">Email</label>
-        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" formControlName="username" >
+        <div class="form-text text-danger" *ngIf="isFormControlInvalid('username')"> O usuário deve conter pelo menos 6 caracteres.</div>
         <div id="emailHelp" class="form-text"></div>
         </div>
         <div class="mb-3">
         <label for="exampleInputPassword1" class="form-label">Senha</label>
-        <input type="password" class="form-control" id="exampleInputPassword1">
-        </div>
+        <input type="password" class="form-control" id="exampleInputPassword1" formControlName="password">
+        <div class="form-text text-danger" *ngIf="isFormControlInvalid('password')" > O password deve conter pelo menos 6 caracteres.</div>
+    </div>
         
-        <button type="submit" class="btn btn-primary">Submit</button>
+    <button type="submit" class="btn btn-primary"  [disabled]="!formLogin.valid" >Entrar</button>
+    <p class="naopossuiconta" style="color: black;">Não possui conta?</p>
+    <button class="registrar" type="submit" class="btn btn-primary">Registre-se</button>
+    
     </form>
 </div>

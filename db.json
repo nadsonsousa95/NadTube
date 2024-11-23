@@ -1,0 +1,257 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Alice Silva",
+      "email": "alice.silva@example.com",
+      "socialLoginProvider": "Google"
+    },
+    {
+      "id": 2,
+      "name": "Bruno Souza",
+      "email": "bruno.souza@example.com",
+      "socialLoginProvider": "Facebook"
+    }
+  ],
+  "videos": [
+    {
+      "id": 1,
+      "title": "Rick Astley - Never Gonna Give You Up (Official Music Video)",
+      "description": "The official video for “Never Gonna Give You Up” by Rick Astley",
+      "url": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+      "thumbnail": "https://i.ytimg.com/vi/dQw4w9WgXcQ/hqdefault.jpg",
+      "views": 1200000000,
+      "uploadedAt": "2009-10-25T07:57:33Z"
+    },
+    {
+      "id": 2,
+      "title": "Mark Ronson - Uptown Funk (Official Video) ft. Bruno Mars",
+      "description": "Mark Ronson's official music video for 'Uptown Funk' ft. Bruno Mars.",
+      "url": "https://www.youtube.com/watch?v=3JZ_D3ELwOQ",
+      "thumbnail": "https://i.ytimg.com/vi/3JZ_D3ELwOQ/hqdefault.jpg",
+      "views": 4000000000,
+      "uploadedAt": "2014-11-19T20:00:11Z"
+    },
+    {
+      "id": 3,
+      "title": "Smash Mouth - All Star (Official Music Video)",
+      "description": "The official music video for Smash Mouth's hit song 'All Star'.",
+      "url": "https://www.youtube.com/watch?v=L_jWHffIx5E",
+      "thumbnail": "https://i.ytimg.com/vi/L_jWHffIx5E/hqdefault.jpg",
+      "views": 300000000,
+      "uploadedAt": "2009-06-16T00:00:00Z"
+    },
+
+    {
+      "id": 5,
+      "title": "Alok, Zeeba e Bruno Martini - Hear Me Now (Official Music Video)",
+      "description": "Videoclipe oficial de 'Hear Me Now' por Alok, Zeeba e Bruno Martini.",
+      "url": "https://www.youtube.com/watch?v=JVpTp8IHdEg",
+      "thumbnail": "https://i.ytimg.com/vi/JVpTp8IHdEg/hqdefault.jpg",
+      "views": 400000000,
+      "uploadedAt": "2016-11-03T12:00:00Z"
+    },
+    {
+      "id": 6,
+      "title": "Andrews Sisters Boogie Woogie Bugle Boy",
+      "description": "A clip from Buck Privates from my VHS Tapes file. I do not own the rights, but love the movie.",
+      "url": "https://www.youtube.com/watch?v=8of3uhG1tCI",
+      "thumbnail": "https://i.ytimg.com/vi/8of3uhG1tCI/hqdefault.jpg",
+      "views": 18263726,
+      "uploadedAt": "2015-01-13T12:00:00Z"
+    },
+
+    {
+      "id": 7,
+      "title": "The Beatles - Hey Jude",
+      "description": "Videoclipe oficial de 'Hey Jude' dos The Beatles.",
+      "url": "https://www.youtube.com/watch?v=A_MjCqQoLLA",
+      "thumbnail": "https://i.ytimg.com/vi/A_MjCqQoLLA/hqdefault.jpg",
+      "views": 250000000,
+      "uploadedAt": "2015-10-02T00:00:00Z"
+    },
+    {
+      "id": 8,
+      "title": "The Beatles - Let It Be",
+      "description": "Videoclipe oficial de 'Let It Be' dos The Beatles.",
+      "url": "https://www.youtube.com/watch?v=QDYfEBY9NM4",
+      "thumbnail": "https://i.ytimg.com/vi/QDYfEBY9NM4/hqdefault.jpg",
+      "views": 300000000,
+      "uploadedAt": "2018-05-23T12:00:00Z"
+    },
+    {
+      "id": 9,
+      "title": "Queen - Bohemian Rhapsody (Official Video)",
+      "description": "Videoclipe oficial de 'Bohemian Rhapsody' de Queen.",
+      "url": "https://www.youtube.com/watch?v=fJ9rUzIMcZQ",
+      "thumbnail": "https://i.ytimg.com/vi/fJ9rUzIMcZQ/hqdefault.jpg",
+      "views": 1500000000,
+      "uploadedAt": "2008-08-01T00:00:00Z"
+    },
+    {
+      "id": 310,
+      "title": "Nirvana - Smells Like Teen Spirit (Official Music Video)",
+      "description": "Videoclipe oficial de 'Smells Like Teen Spirit' do Nirvana.",
+      "url": "https://www.youtube.com/watch?v=hTWKbfoikeg",
+      "thumbnail": "https://i.ytimg.com/vi/hTWKbfoikeg/hqdefault.jpg",
+      "views": 1400000000,
+      "uploadedAt": "2009-06-16T12:00:00Z"
+    },
+    {
+      "id": 11,
+      "title": "Guns N' Roses - Sweet Child O' Mine (Official Music Video)",
+      "description": "Videoclipe oficial de 'Sweet Child O' Mine' dos Guns N' Roses.",
+      "url": "https://www.youtube.com/watch?v=1w7OgIMMRc4",
+      "thumbnail": "https://i.ytimg.com/vi/1w7OgIMMRc4/hqdefault.jpg",
+      "views": 1200000000,
+      "uploadedAt": "2009-10-25T12:00:00Z"
+    },
+    {
+      "id": 12,
+      "title": "AC/DC - Thunderstruck (Official Video)",
+      "description": "Videoclipe oficial de 'Thunderstruck' do AC/DC.",
+      "url": "https://www.youtube.com/watch?v=v2AC41dglnM",
+      "thumbnail": "https://i.ytimg.com/vi/v2AC41dglnM/hqdefault.jpg",
+      "views": 900000000,
+      "uploadedAt": "2010-11-06T12:00:00Z"
+    },
+    {
+      "id": 13,
+      "title": "Led Zeppelin - Stairway to Heaven (Live at Earls Court 1975)",
+      "description": "Apresentação ao vivo de 'Stairway to Heaven' do Led Zeppelin.",
+      "url": "https://www.youtube.com/watch?v=QkF3oxziUI4",
+      "thumbnail": "https://i.ytimg.com/vi/QkF3oxziUI4/hqdefault.jpg",
+      "views": 180000000,
+      "uploadedAt": "2012-12-05T12:00:00Z"
+    },
+    {
+      "id": 14,
+      "title": "Pink Floyd - Another Brick in the Wall, Part Two (Official Music Video)",
+      "description": "Videoclipe oficial de 'Another Brick in the Wall, Part Two' do Pink Floyd.",
+      "url": "https://www.youtube.com/watch?v=YR5ApYxkU-U",
+      "thumbnail": "https://i.ytimg.com/vi/YR5ApYxkU-U/hqdefault.jpg",
+      "views": 600000000,
+      "uploadedAt": "2014-02-26T12:00:00Z"
+    },
+    {
+      "id": 15,
+      "title": "The Rolling Stones - Paint It, Black (Official Lyric Video)",
+      "description": "Lyric video oficial de 'Paint It, Black' dos The Rolling Stones.",
+      "url": "https://www.youtube.com/watch?v=O4irXQhgMqg",
+      "thumbnail": "https://i.ytimg.com/vi/O4irXQhgMqg/hqdefault.jpg",
+      "views": 400000000,
+      "uploadedAt": "2013-07-22T12:00:00Z"
+    },
+    {
+      "id": 16,
+      "title": "The Doors - Riders on the Storm (Official Audio)",
+      "description": "Áudio oficial de 'Riders on the Storm' dos The Doors.",
+      "url": "https://www.youtube.com/watch?v=iv8GW1GaoIc",
+      "thumbnail": "https://i.ytimg.com/vi/iv8GW1GaoIc/hqdefault.jpg",
+      "views": 200000000,
+      "uploadedAt": "2015-11-11T12:00:00Z"
+    },
+    {
+      "id": 17,
+      "title": "Metallica - Nothing Else Matters (Official Music Video)",
+      "description": "Videoclipe oficial de 'Nothing Else Matters' do Metallica.",
+      "url": "https://www.youtube.com/watch?v=tAGnKpE4NCI",
+      "thumbnail": "https://i.ytimg.com/vi/tAGnKpE4NCI/hqdefault.jpg",
+      "views": 1000000000,
+      "uploadedAt": "2009-10-27T12:00:00Z"
+    },
+    {
+      "id": 18,
+      "title": "U2 - With Or Without You (Official Music Video)",
+      "description": "Videoclipe oficial de 'With Or Without You' do U2.",
+      "url": "https://www.youtube.com/watch?v=XmSdTa9kaiQ",
+      "thumbnail": "https://i.ytimg.com/vi/XmSdTa9kaiQ/hqdefault.jpg",
+      "views": 400000000,
+      "uploadedAt": "2009-06-16T12:00:00Z"
+    },
+    {
+      "id": 19,
+      "title": "The Beatles - Come Together",
+      "description": "Videoclipe oficial de 'Come Together' dos The Beatles.",
+      "url": "https://www.youtube.com/watch?v=45cYwDMibGo",
+      "thumbnail": "https://i.ytimg.com/vi/45cYwDMibGo/hqdefault.jpg",
+      "views": 300000000,
+      "uploadedAt": "2015-10-02T12:00:00Z"
+    },
+    {
+      "id": 20,
+      "title": "Aerosmith - Dream On (Official Audio)",
+      "description": "Áudio oficial de 'Dream On' do Aerosmith.",
+      "url": "https://www.youtube.com/watch?v=89dGC8de0CA",
+      "thumbnail": "https://i.ytimg.com/vi/89dGC8de0CA/hqdefault.jpg",
+      "views": 200000000,
+      "uploadedAt": "2013-10-10T12:00:00Z"
+    },
+    {
+      "id": 21,
+      "title": "Bon Jovi - Livin' On A Prayer",
+      "description": "Videoclipe oficial de 'Livin' On A Prayer' do Bon Jovi.",
+      "url": "https://www.youtube.com/watch?v=lDK9QqIzhwk",
+      "thumbnail": "https://i.ytimg.com/vi/lDK9QqIzhwk/hqdefault.jpg",
+      "views": 900000000,
+      "uploadedAt": "2009-06-16T12:00:00Z"
+    },
+    {
+      "id": 22,
+      "title": "Desenvolvimento com Angular: Do Básico ao Avançado",
+      "description": "Aprenda tudo sobre Angular, desde os conceitos básicos até técnicas avançadas, neste curso completo de desenvolvimento web.",
+      "url": "https://www.youtube.com/watch?v=3qBXWUpoPHo",
+      "thumbnail": "https://img.youtube.com/vi/3qBXWUpoPHo/hqdefault.jpg",
+      "views": 900000000,
+      "uploadedAt": "2009-06-16T12:00:00Z"
+    },
+    {
+      "id": 22,
+      "title": "Design de Interfaces com Figma",
+      "description": "Descubra como criar interfaces modernas e funcionais utilizando o Figma, uma das ferramentas mais populares entre designers.",
+      "url": "https://www.youtube.com/watch?v=FTFaQWZBqQ8",
+      "thumbnail": "https://img.youtube.com/vi/FTFaQWZBqQ8/hqdefault.jpg",
+      "views": 900000000,
+      "uploadedAt": "2009-06-16T12:00:00Z"
+    }
+  ],
+  "likes": [
+    {
+      "userId": 1,
+      "videoId": 1
+    },
+    {
+      "userId": 1,
+      "videoId": 2
+    },
+    {
+      "userId": 2,
+      "videoId": 1
+    }
+  ],
+
+  "watchLater": [
+    {
+      "userId": 1,
+      "videoId": 3
+    },
+    {
+      "userId": 2,
+      "videoId": 1
+    }
+  ],
+  "favorites": [
+    {
+      "userId": 1,
+      "videoId": 1
+    },
+    {
+      "userId": 1,
+      "videoId": 2
+    },
+    {
+      "userId": 2,
+      "videoId": 2
+    }
+  ]
+}
