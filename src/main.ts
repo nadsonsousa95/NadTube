@@ -7,9 +7,11 @@ import { HomeComponent } from './app/pages/home/home.component';
 import { ToastrModule } from 'ngx-toastr';
 import { importProvidersFrom } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { provideHttpClient, withFetch } from '@angular/common/http';
 
 bootstrapApplication(AppComponent, {
   providers: [
+    provideHttpClient(withFetch()),
     importProvidersFrom(
       BrowserAnimationsModule,
       ToastrModule.forRoot({

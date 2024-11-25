@@ -4,12 +4,14 @@
       "id": 1,
       "name": "Alice Silva",
       "email": "alice.silva@example.com",
+      "password": "654321",
       "socialLoginProvider": "Google"
     },
     {
       "id": 2,
       "name": "Bruno Souza",
       "email": "bruno.souza@example.com",
+      "password": "123456",
       "socialLoginProvider": "Facebook"
     }
   ],
@@ -41,7 +43,6 @@
       "views": 300000000,
       "uploadedAt": "2009-06-16T00:00:00Z"
     },
-
     {
       "id": 5,
       "title": "Alok, Zeeba e Bruno Martini - Hear Me Now (Official Music Video)",
@@ -60,7 +61,6 @@
       "views": 18263726,
       "uploadedAt": "2015-01-13T12:00:00Z"
     },
-
     {
       "id": 7,
       "title": "The Beatles - Hey Jude",
@@ -229,7 +229,6 @@
       "videoId": 1
     }
   ],
-
   "watchLater": [
     {
       "userId": 1,

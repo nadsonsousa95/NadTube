@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { LoginService } from './login.service';
 
 @Component({
   selector: 'app-login',
@@ -12,32 +13,37 @@ import { CommonModule } from '@angular/common';
   templateUrl: './login.component.html',
   styleUrl: './login.component.css'
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent {
 
-    public formLogin:FormGroup;
+    public loginForm:FormGroup;
+    errorMessage: string = '';
 
     constructor(
       private fb:FormBuilder, 
-      private route:Router, 
-      private toast:ToastrService){
-      this.formLogin = this.criarFormLogin();
+      private loginService:LoginService,
+      private router:Router, 
+      private toast:ToastrService
+    ){
+      this.loginForm = this.fb.group({
+        email: ['', [Validators.required, Validators.email]],
+        password: ['', [Validators.required]]
+      });
     }
 
-    ngOnInit(): void {
-      
-    }
 
-    public criarFormLogin():FormGroup{
-      return this.fb.group({
-        username:["", [Validators.required, Validators.minLength(6)]],
-        password:["", [Validators.required, Validators.minLength(6)]]
-      })
+    onSubmit(): void {
+      if (this.loginForm.valid) {
+        const { email, password } = this.loginForm.value;
+        this.loginService.login(email, password).subscribe({
+          next: (user) => {
+            this.toast.success("Login efetuado co sucesso!");
+            console.log('Login bem-sucedido:', user);
+            this.router.navigate(['']); // Redirecionar após login
+          },
+          error: (err) => {
+            this.errorMessage = err.message;
+          }
+        });
+      }
     }
-
-    public isFormControlInvalid(controlName:string):boolean{
-      return !!(this.formLogin.get(controlName)?.invalid && this.formLogin.get(controlName)?.touched)
-    }
-    
-     
-
-}
+  }
