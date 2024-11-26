@@ -8,6 +8,7 @@ import { ToastrModule } from 'ngx-toastr';
 import { importProvidersFrom } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { provideHttpClient, withFetch } from '@angular/common/http';
+import { VideoDetailComponent } from './app/pages/video/video-detail.component';
 
 bootstrapApplication(AppComponent, {
   providers: [
@@ -29,7 +30,7 @@ bootstrapApplication(AppComponent, {
               //{path: 'usuarios', component: HomeComponent }
           ]
           
-      },
+      }, { path: 'video/:id', component: VideoDetailComponent },
       {path:'**', redirectTo:'login'}  
   
     ]),
