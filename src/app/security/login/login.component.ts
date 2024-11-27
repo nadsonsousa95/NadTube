@@ -16,7 +16,7 @@ import { LoginService } from './login.service';
 export class LoginComponent {
 
     public loginForm:FormGroup;
-    errorMessage: string = '';
+    errorMessage: string = 'Login inválido';
 
     constructor(
       private fb:FormBuilder, 
@@ -36,7 +36,7 @@ export class LoginComponent {
         const { email, password } = this.loginForm.value;
         this.loginService.login(email, password).subscribe({
           next: (user) => {
-            this.toast.success("Login efetuado co sucesso!");
+            this.toast.success("Login efetuado com sucesso!");
             console.log('Login bem-sucedido:', user);
             this.router.navigate(['']); // Redirecionar após login
           },

@@ -3,10 +3,28 @@
     NadTube
 </h1>
 
-<form class="d-flex" role="search">
-  <input class="form-control me-2" type="search" placeholder="Pesquisar" aria-label="Search">
-  <button class="btn btn-outline-success" type="submit">Pesquisar</button>
+<form class="d-flex" role="search" (submit)="onSearch()">
+  <input 
+  class="form-control me-2" 
+  type="search" placeholder="Pesquisar vídeos..." 
+  [(ngModel)]="searchTerm"
+  (input)="onSearch()" 
+  aria-label="Search">
+  <button class="btn btn-outline-success" type="submit" (click)="onSearch()">Pesquisar</button>
 </form>
+
+<div *ngIf="filteredVideos.length > 0" class="video-list">
+  <div *ngFor="let video of filteredVideos" class="video-item">
+    <h3>{{ video.title }}</h3>
+    <p>{{ video.description }}</p>
+    <a [routerLink]="['/video', video.id]" class="btn btn-primary">Ver Detalhes</a>
+  </div>
+</div>
+
+<div *ngIf="filteredVideos.length === 0" class="alert alert-warning">
+  Nenhum vídeo encontrado.
+</div>
+
 
 <div class="video-list-container">
     <h2>Lista de vídeos</h2>

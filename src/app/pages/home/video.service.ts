@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { map } from 'rxjs';
 
 export interface Video {
   id: number;
@@ -33,5 +34,15 @@ export class VideoService {
   // Incrementar visualizações de um vídeo
   incrementViews(id: number, views: number): Observable<Video> {
     return this.http.patch<Video>(`${this.baseUrl}/${id}`, { views: views + 1 });
+  }
+
+  searchVideos(term: string): Observable<Video[]> {
+    return this.http.get<Video[]>(this.baseUrl).pipe(
+      map((videos) =>
+        videos.filter((video) =>
+          video.title.toLowerCase().includes(term.toLowerCase())
+        )
+      )
+    );
   }
 }
