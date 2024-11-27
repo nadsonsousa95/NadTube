@@ -30,7 +30,8 @@ bootstrapApplication(AppComponent, {
               //{path: 'usuarios', component: HomeComponent }
           ]
           
-      }, { path: 'video/:id', component: VideoDetailComponent },
+      }, 
+      {path: 'exibe-video', component: VideoDetailComponent },
       {path:'**', redirectTo:'login'}  
   
     ]),

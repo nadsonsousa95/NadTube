@@ -1,36 +1,76 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { VideoService, Video } from '../home/video.service';
 import { SafeUrlPipe } from './safe-url.pipe';
 import { CommonModule } from '@angular/common';
 
+declare var YT: any; // Declarar a variável da API do YouTube
+
 @Component({
-    standalone: true,
-    imports: [SafeUrlPipe, CommonModule],
   selector: 'app-video-detail',
+  imports: [CommonModule, SafeUrlPipe],
   templateUrl: './video-detail.component.html',
   styleUrls: ['./video-detail.component.css']
 })
-export class VideoDetailComponent implements OnInit {
-  video: Video | null = null;
+export class VideoDetailComponent implements OnInit, AfterViewInit {
+  videoUrl: string | undefined;
+  currentVideo: Video | undefined; // Objeto para armazenar informações do vídeo
+  videoId: string | undefined;
 
   constructor(private route: ActivatedRoute, private videoService: VideoService) {}
 
   ngOnInit(): void {
-    const id = Number(this.route.snapshot.paramMap.get('id'));
-    if (id) {
-      this.videoService.getVideoById(id).subscribe((data) => {
-        this.video = data;
-        this.incrementViews();
+    this.route.queryParams.subscribe((params) => {
+      this.videoUrl = params['url'];
+      if (this.videoUrl) {
+        this.videoId = this.extractVideoId(this.videoUrl);
+        this.loadVideoDetails(this.videoId);
+      }
+    });
+  }
+
+  ngAfterViewInit(): void {
+    if (this.videoId && this.currentVideo) {
+      this.loadYouTubePlayer();
+    }
+  }
+
+  extractVideoId(url: string): string {
+    const regex = /(?:https?:\/\/(?:www\.)?youtube\.com\/(?:watch\?v=|embed\/|v\/)|youtu\.be\/)([\w-]{11})/;
+    const match = url.match(regex);
+    return match ? match[1] : '';
+  }
+
+  loadVideoDetails(videoId: string): void {
+    this.videoService.getVideoById(Number(videoId)).subscribe((video) => {
+      this.currentVideo = video; // Preenche o currentVideo com os dados obtidos
+      this.incrementViews(video.id, video.views); // Atualiza visualizações
+    });
+  }
+
+  loadYouTubePlayer() {
+    if (!(window as any)['YT'] || !(window as any)['YT'].Player) {
+      setTimeout(() => this.loadYouTubePlayer(), 500);
+      return;
+    }
+
+    const playerElement = document.getElementById('video-player');
+    if (playerElement && this.videoId) {
+      new YT.Player(playerElement, {
+        videoId: this.videoId,
+        playerVars: {
+          autoplay: 1,
+          controls: 1,
+          rel: 0,
+          modestbranding: 1,
+        },
       });
     }
   }
 
-  incrementViews(): void {
-    if (this.video) {
-      this.videoService.incrementViews(this.video.id, this.video.views).subscribe((updatedVideo) => {
-        this.video = updatedVideo;
-      });
-    }
+  incrementViews(videoId: number, currentViews: number): void {
+    this.videoService.incrementViews(videoId, currentViews).subscribe((updatedVideo) => {
+      this.currentVideo!.views = updatedVideo.views; // Atualiza o número de visualizações
+    });
   }
-} 
+}

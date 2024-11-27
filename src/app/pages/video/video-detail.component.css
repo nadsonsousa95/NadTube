@@ -1,0 +1,32 @@
+.video-detail {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Preenche toda a altura da tela */
+    background-color: #f9f9f9; /* Fundo claro para destacar o vídeo */
+    padding: 1rem;
+    box-sizing: border-box;
+  }
+  
+  h2 {
+    margin-bottom: 30px;
+    font-size: 1.5rem;
+    text-align: center;
+    color: #CF1A1A;
+  }
+  
+  #video-player {
+    width: 100%;
+    max-width: 800px; /* Limite máximo para o vídeo */
+    aspect-ratio: 16 / 9; /* Proporção padrão para vídeos */
+    background-color: black; /* Cor de fundo para áreas não preenchidas */
+  }
+  
+  @media (max-width: 768px) {
+    #video-player {
+      max-width: 100%; /* Preenche a largura da tela em dispositivos menores */
+      height: auto; /* Ajusta a altura automaticamente */
+    }
+  }
+  

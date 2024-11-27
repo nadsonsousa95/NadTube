@@ -1,20 +1,11 @@
-<div *ngIf="video; else loading" class="video-detail">
-    <h2>{{ video?.title }}</h2>
-    <div class="video-frame">
-      <iframe
-        [src]="video?.url ?? '' | safeUrl"
-        width="100%"
-        height="400"
-        frameborder="0"
-        allowfullscreen
-      ></iframe>
-    </div>
-    <p>{{ video?.description }}</p>
-    <p><strong>Views:</strong> {{ video?.views }}</p>
-    <button class="btn btn-primary" (click)="incrementViews()">Assistir Novamente</button>
+
+
+<div *ngIf="videoId as currentVideoId; else loading" class="video-detail">
+    <h2>Assistindo ao vídeo...</h2>
+    <div id="video-player"></div> <!-- O player será inserido aqui -->
   </div>
-  
+
   <ng-template #loading>
-    <p>Carregando vídeo...</p>
+    <p style="color: white;">Carregando vídeo...</p>
   </ng-template>
   

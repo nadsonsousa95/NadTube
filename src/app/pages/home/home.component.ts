@@ -4,9 +4,11 @@ import { VideoDetailComponent } from '../video/video-detail.component';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
+import { Router } from '@angular/router';
+import { ReactiveFormsModule } from '@angular/forms';
 @Component({
   selector: 'app-home',
-  imports: [VideoDetailComponent, CommonModule, FormsModule, RouterModule],
+  imports: [ReactiveFormsModule, CommonModule, FormsModule, RouterModule],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
@@ -15,7 +17,9 @@ export class HomeComponent implements OnInit {
   filteredVideos: Video[] = [];
   searchTerm: string = '';
 
-  constructor(private videoService: VideoService) {}
+  constructor(
+    private videoService: VideoService, 
+    private router:Router) {}
 
   ngOnInit(): void {
     this.fetchVideos();
@@ -28,8 +32,11 @@ export class HomeComponent implements OnInit {
   }
   watchVideo(video: Video): void {
     // Redireciona para a página do vídeo ou exibe um modal.
-    console.log(`Assistindo ao vídeo: ${video.title}`);
-    window.open(video.url, '_blank'); // Abre o vídeo em uma nova aba
+    this.router.navigate(['/exibe-video'], {queryParams: { url: video.url } });
+    // Incrementa a visualização
+    this.videoService.incrementViews(video.id,video.views).subscribe(updatedVideo => {
+      console.log(`Visualizações do vídeo "${updatedVideo.title}" aumentadas.`);
+   })
   }
 
   onSearch(): void {
