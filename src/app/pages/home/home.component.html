@@ -1,7 +1,8 @@
 
 <h1 style="color: #CF1A1A;" class="p-3 text-center">
-    NadTube
+  NadTube
 </h1>
+
 <!-- Barra de pesquisa -->
 <form (submit)="onSearch()" class="d-flex mb-3">
   <input
@@ -12,14 +13,16 @@
     name="search"
     aria-label="Search"
   />
-  <button class="btn btn-primary" type="submit">Pesquisar</button>
+  <button class="btn btn-primary watch-button" type="submit">Pesquisar</button>
 </form>
 
 <div *ngIf="filteredVideos.length > 0" class="video-list">
   <div *ngFor="let video of filteredVideos" class="video-item">
-    <h3>{{ video.title }}</h3>
-    <p>{{ video.description }}</p>
-    <button class="watch-button" (click)="watchVideo(video)">Assistir</button>
+    <div class="video-title-search">
+      <h3>{{ video.title }}</h3>
+      <p>{{ video.description }}</p>
+    </div>
+    <button class="watch-button" (click)="watchVideo(video)">ASSISTIR</button>
   </div>
 </div>
 
@@ -46,7 +49,7 @@
         <div class="video-info">
           <h3 class="video-title">{{ video.title }}</h3>
           <p class="video-description">{{ video.description }}</p>
-          <button class="watch-button" (click)="watchVideo(video)">Assistir</button>
+          <button class="watch-button" (click)="watchVideo(video)">ASSISTIR</button>
         </div>
       </div>
     </div>

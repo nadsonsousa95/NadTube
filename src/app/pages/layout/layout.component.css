@@ -3,6 +3,22 @@
     color: #CF1A1A;
 }
 
+.row {
+    background-color: #CF1A1A;
+}
+
 .logout:hover{
     color: rgb(87, 9, 9);
+}
+
+.navbar{
+    background-color: white;
+}
+
+.container-fluid{
+    background-color: white;
+}
+
+.navbar-brand{
+    font-weight: bold;
 }

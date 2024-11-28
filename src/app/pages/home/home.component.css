@@ -60,11 +60,10 @@
     border-radius: 4px;
     cursor: pointer;
     font-size: 0.9rem;
-    text-transform: uppercase;
   }
   
   .watch-button:hover {
-    background-color: #0056b3;
+    background-color: #942101;
   }
   
   form button {
@@ -76,4 +75,19 @@
 .video-list a{
   background-color: #CF1A1A;
   border: none;
+}
+
+.video-item{
+  justify-content: space-between;
+  display: flex;
+  align-items: center;
+  margin: 0 10px;
+  padding: auto 2px;
+  border-bottom: 1px #555 solid;
+}
+
+.video-title-search h3{
+  font-size: 20px;
+  margin-bottom: 0;
+  margin-top: 10px;
 }
