@@ -19,13 +19,13 @@
   <div *ngFor="let video of filteredVideos" class="video-item">
     <h3>{{ video.title }}</h3>
     <p>{{ video.description }}</p>
-    <a [routerLink]="['/video', video.id]" class="btn btn-primary">Ver Detalhes</a>
+    <button class="watch-button" (click)="watchVideo(video)">Assistir</button>
   </div>
 </div>
 
-<div *ngIf="filteredVideos.length === 0 && searchTerm" class="alert alert-warning">
+<!--<div *ngIf="filteredVideos.length === 0 && searchTerm" class="alert alert-warning">
   Nenhum vídeo encontrado para "{{ searchTerm }}".
-</div>
+</div> -->
 
 <!--<div *ngIf="filteredVideos.length === 0 && !searchTerm" class="alert alert-info">
   Digite algo para pesquisar vídeos.
