@@ -73,3 +73,7 @@
     border: none;
   }
 
+.video-list a{
+  background-color: #CF1A1A;
+  border: none;
+}

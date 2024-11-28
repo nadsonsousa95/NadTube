@@ -2,15 +2,17 @@
 <h1 style="color: #CF1A1A;" class="p-3 text-center">
     NadTube
 </h1>
-
-<form class="d-flex" role="search" (submit)="onSearch()">
-  <input 
-  class="form-control me-2" 
-  type="search" placeholder="Pesquisar vídeos..." 
-  [(ngModel)]="searchTerm"
-  (input)="onSearch()" 
-  aria-label="Search">
-  <button class="btn btn-outline-success" type="submit" (click)="onSearch()">Pesquisar</button>
+<!-- Barra de pesquisa -->
+<form (submit)="onSearch()" class="d-flex mb-3">
+  <input
+    class="form-control me-2"
+    type="search"
+    placeholder="Pesquisar vídeos..."
+    [(ngModel)]="searchTerm"
+    name="search"
+    aria-label="Search"
+  />
+  <button class="btn btn-primary" type="submit">Pesquisar</button>
 </form>
 
 <div *ngIf="filteredVideos.length > 0" class="video-list">
@@ -21,9 +23,14 @@
   </div>
 </div>
 
-<div *ngIf="filteredVideos.length === 0" class="alert alert-warning">
-  Nenhum vídeo encontrado.
+<div *ngIf="filteredVideos.length === 0 && searchTerm" class="alert alert-warning">
+  Nenhum vídeo encontrado para "{{ searchTerm }}".
 </div>
+
+<!--<div *ngIf="filteredVideos.length === 0 && !searchTerm" class="alert alert-info">
+  Digite algo para pesquisar vídeos.
+</div>    -->
+
 
 
 <div class="video-list-container">

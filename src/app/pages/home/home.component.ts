@@ -30,6 +30,7 @@ export class HomeComponent implements OnInit {
       this.videos = data;
     });
   }
+  
   watchVideo(video: Video): void {
     // Redireciona para a página do vídeo ou exibe um modal.
     this.router.navigate(['/exibe-video'], {queryParams: { url: video.url } });
@@ -39,13 +40,15 @@ export class HomeComponent implements OnInit {
    })
   }
 
+  // Filtra os vídeos com base no termo de pesquisa
   onSearch(): void {
-    const term = this.searchTerm.trim().toLowerCase(); // Remove espaços extras e converte para minúsculas
+    const term = this.searchTerm.trim().toLowerCase();
     if (term) {
       this.filteredVideos = this.videos.filter((video) =>
-        video.title.toLowerCase().includes(term) || // Verifica se o título contém o termo
-        video.description.toLowerCase().includes(term) // Verifica se a descrição contém o termo
+        video.title.toLowerCase().includes(term)
       );
+    } else {
+      this.filteredVideos = []; // Mostra todos os vídeos se a busca estiver vazia
     }
   }
   

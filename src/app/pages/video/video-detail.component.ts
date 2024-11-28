@@ -15,6 +15,7 @@ export class VideoDetailComponent implements OnInit, AfterViewInit {
     videoUrl: string | undefined;
      // Objeto para armazenar informações do vídeo
     videoId: string | undefined;
+    currentVideo: Video | undefined;
 
     constructor(private route: ActivatedRoute,  private videoService: VideoService) {}
 

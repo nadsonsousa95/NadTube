@@ -40,9 +40,11 @@ export class VideoService {
     return this.http.get<Video[]>(this.baseUrl).pipe(
       map((videos) =>
         videos.filter((video) =>
-          video.title.toLowerCase().includes(term.toLowerCase())
+          video.title.toLowerCase().includes(term.toLowerCase()) ||
+          video.description.toLowerCase().includes(term.toLowerCase()) // Filtra por título e descrição
         )
       )
     );
   }
+  
 }
