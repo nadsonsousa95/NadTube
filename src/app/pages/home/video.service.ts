@@ -31,7 +31,7 @@ export class VideoService {
     return this.http.get<Video>(`${this.baseUrl}/${id}`);
   }
 
-  // Incrementar visualizações de um vídeo
+  // Incrementar visualizações de um vídeo (VideoService)
   incrementViews(id: number, views: number): Observable<Video> {
     return this.http.patch<Video>(`${this.baseUrl}/${id}`, { views: views + 1 });
   }
@@ -40,8 +40,7 @@ export class VideoService {
     return this.http.get<Video[]>(this.baseUrl).pipe(
       map((videos) =>
         videos.filter((video) =>
-          video.title.toLowerCase().includes(term.toLowerCase()) ||
-          video.description.toLowerCase().includes(term.toLowerCase()) // Filtra por título e descrição
+          video.title.toLowerCase().includes(term.toLowerCase())
         )
       )
     );

@@ -25,6 +25,7 @@ export class HomeComponent implements OnInit {
     this.fetchVideos();
   }
 
+  // Busca a lista de vídeos do serviço e a atribui á propriedade videos
   fetchVideos(): void {
     this.videoService.getVideos().subscribe((data) => {
       this.videos = data;
@@ -32,13 +33,23 @@ export class HomeComponent implements OnInit {
   }
   
   watchVideo(video: Video): void {
-    // Redireciona para a página do vídeo ou exibe um modal.
-    this.router.navigate(['/exibe-video'], {queryParams: { url: video.url } });
-    // Incrementa a visualização
-    this.videoService.incrementViews(video.id,video.views).subscribe(updatedVideo => {
-      console.log(`Visualizações do vídeo "${updatedVideo.title}" aumentadas.`);
-   })
+    // Incrementa a visualização no backend
+    console.log('ID do vídeo:', video.id);
+    this.videoService.incrementViews(video.id, video.views).subscribe(
+      (updatedVideo) => {
+        console.log(`Visualizações do vídeo "${updatedVideo.title}" aumentadas.`);
+        // Atualiza o número de views localmente
+        video.views = updatedVideo.views;
+      },
+      (error) => {
+        console.error('Erro ao incrementar visualizações:', error);
+      }
+    );
+  
+    // Redireciona para a página do vídeo
+    this.router.navigate(['/exibe-video'], { queryParams: { url: video.url } });
   }
+  
 
   // Filtra os vídeos com base no termo de pesquisa
   onSearch(): void {

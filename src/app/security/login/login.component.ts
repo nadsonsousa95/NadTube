@@ -21,7 +21,7 @@ export class LoginComponent {
     constructor(
       private fb:FormBuilder, 
       private loginService:LoginService,
-      private router:Router, 
+      private router:Router,
       private toast:ToastrService
     ){
       this.loginForm = this.fb.group({
@@ -30,7 +30,6 @@ export class LoginComponent {
       });
     }
 
-
     onSubmit(): void {
       if (this.loginForm.valid) {
         const { email, password } = this.loginForm.value;
@@ -38,7 +37,7 @@ export class LoginComponent {
           next: (user) => {
             this.toast.success("Login efetuado com sucesso!");
             console.log('Login bem-sucedido:', user);
-            this.router.navigate(['']); // Redirecionar após login
+            this.router.navigate(['home']); // Redirecionar após login
           },
           error: (err) => {
             this.errorMessage = err.message;

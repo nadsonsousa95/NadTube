@@ -7,7 +7,7 @@ import { HomeComponent } from './app/pages/home/home.component';
 import { ToastrModule } from 'ngx-toastr';
 import { importProvidersFrom } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { provideHttpClient, withFetch } from '@angular/common/http';
+import { provideHttpClient, withFetch, withInterceptorsFromDi } from '@angular/common/http';
 import { VideoDetailComponent } from './app/pages/video/video-detail.component';
 
 bootstrapApplication(AppComponent, {
@@ -24,7 +24,7 @@ bootstrapApplication(AppComponent, {
     provideRouter([
       {path: 'login', component: LoginComponent},
       {
-          path: '', component: LayoutComponent,
+          path: 'home', component: LayoutComponent,
           children:[
               {path: '', component: HomeComponent },
               //{path: 'usuarios', component: HomeComponent }

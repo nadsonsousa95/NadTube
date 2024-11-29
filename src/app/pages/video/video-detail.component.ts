@@ -7,7 +7,7 @@ import { CommonModule } from '@angular/common';
 declare var YT: any; // Declarar a variável da API do YouTube
 @Component({
   selector: 'app-video-detail',
-  imports: [CommonModule, SafeUrlPipe],
+  imports: [CommonModule],
   templateUrl: './video-detail.component.html',
   styleUrls: ['./video-detail.component.css']
 })
