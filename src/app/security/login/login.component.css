@@ -4,6 +4,14 @@ button{
     width: 50%;
 }
 
+button :disabled{
+    background-color: #942101;
+}
+
+button:hover{
+    background-color: #942101;
+}
+
 button .registrar{
     background-color: rgb(172, 172, 172);
     color: #CF1A1A;

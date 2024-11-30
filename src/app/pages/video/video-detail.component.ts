@@ -3,6 +3,8 @@ import { ActivatedRoute } from '@angular/router';
 import { VideoService, Video } from '../home/video.service';
 import { SafeUrlPipe } from './safe-url.pipe';
 import { CommonModule } from '@angular/common';
+import { LoginService } from '../../security/login/login.service';
+import { Router } from '@angular/router';
 
 declare var YT: any; // Declarar a variável da API do YouTube
 @Component({
@@ -17,7 +19,9 @@ export class VideoDetailComponent implements OnInit, AfterViewInit {
     videoId: string | undefined;
     currentVideo: Video | undefined;
 
-    constructor(private route: ActivatedRoute,  private videoService: VideoService) {}
+    constructor(
+        private route: ActivatedRoute,  private videoService: VideoService,
+        private loginService: LoginService, private router: Router) {}
 
     ngOnInit(): void {
       this.route.queryParams.subscribe((params) => {
@@ -27,6 +31,12 @@ export class VideoDetailComponent implements OnInit, AfterViewInit {
         }
       });
     }
+
+    logout(): void {
+        this.loginService.logout();
+        alert("Tem certeza que deseja encerrar a sessão?")
+        this.router.navigate(['/login']); // Redireciona para a página de login após o logout
+      }
   
     ngAfterViewInit(): void {
       if (this.videoId) {
