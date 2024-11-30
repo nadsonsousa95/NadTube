@@ -17,21 +17,19 @@
   </div>
 </nav>
 
-<div *ngIf="video; else loading" class="video-detail">
+<div style="margin-top: 10px;" *ngIf="video; else loading" class="video-detail">
   <h1>{{ video.title }}</h1>
   <p>{{ video.description }}</p>
-  <p class="views">{{video.views}} visualizações</p>
+  
 </div>
-
-<div *ngIf="videoId as currentVideoId; else loading" class="video-detail">
+<div *ngIf="videoId as currentVideoId; else loading" class="box-video-player">
     <div id="video-player"></div> <!-- O player será inserido aqui -->
   </div>
 
-  <div class=" row ">
-    <div  class="container text-center text-light p-1">
-        © 2024 Copyright nadtube.com by Nadson Sousa
-    </div>
-</div>
+  <div *ngIf="video; else loading" class="video-detail">
+    <p>{{video.views}} visualizações</p>
+    <p style="text-align: center;">{{video.uploadedAt}}</p>
+  </div>
  
   <ng-template #loading>
     <p style="color: white;">Carregando vídeo...</p>
