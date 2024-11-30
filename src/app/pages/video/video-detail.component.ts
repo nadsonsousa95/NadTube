@@ -17,20 +17,42 @@ export class VideoDetailComponent implements OnInit, AfterViewInit {
     videoUrl: string | undefined;
      // Objeto para armazenar informações do vídeo
     videoId: string | undefined;
-    currentVideo: Video | undefined;
+    video: Video | null = null;
+    
 
     constructor(
         private route: ActivatedRoute,  private videoService: VideoService,
         private loginService: LoginService, private router: Router) {}
 
-    ngOnInit(): void {
-      this.route.queryParams.subscribe((params) => {
-        this.videoUrl = params['url'];
-        if (this.videoUrl) {
-          this.videoId = this.extractVideoId(this.videoUrl);
+        ngOnInit(): void {
+          // Captura os parâmetros da URL
+          this.route.queryParams.subscribe((params) => {
+            this.videoUrl = params['url'];
+            const videoId = +params['id']; // Converte para número
+      
+            if (this.videoUrl) {
+              this.videoId = this.extractVideoId(this.videoUrl);
+            }
+      
+            if (videoId) {
+              // Busca os dados do vídeo
+              this.loadVideo(videoId);
+            } else {
+              console.error('ID do vídeo não encontrado nos parâmetros!');
+            }
+          });
         }
-      });
-    }
+
+        loadVideo(id: number): void {
+          this.videoService.getVideoById(id).subscribe(
+            (video) => {
+              this.video = video;
+            },
+            (error) => {
+              console.error('Erro ao carregar os dados do vídeo:', error);
+            }
+          );
+        }
 
     logout(): void {
         this.loginService.logout();

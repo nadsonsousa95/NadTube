@@ -1,68 +1,86 @@
 .video-detail {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh; /* Preenche toda a altura da tela */
-    background-color: #CF1A1A; 
-    padding-top: 0;
-    box-sizing: border-box;
-  }
-  
-  h2 {
-    margin-bottom: 30px;
-    font-size: 1.5rem;
-    text-align: center;
-    color: #ffffff;
-  }
-  
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  height: 50vh; /* Preenche toda a altura da tela */
+  background-color: #CF1A1A;
+  padding: 15px; /* Adiciona um pouco de espaçamento interno */
+  box-sizing: border-box;
+}
+
+.video-detail h1{
+  color: white;
+}
+
+h2 {
+  margin-bottom: 10px; /* Espaçamento menor abaixo do título */
+  font-size: 1.5rem;
+  text-align: center;
+  color: #ffffff;
+}
+
+p {
+  margin: 5px 0;
+  color: white;
+}
+
+#video-player {
+  width: 100%;
+  max-width: 1000px; /* Limite máximo para o vídeo */
+  aspect-ratio: 16 / 9; /* Proporção padrão para vídeos */
+  background-color: black; /* Cor de fundo para áreas não preenchidas */
+  margin-top: 0px; /* Espaço entre o player e as informações */
+  margin-bottom: 20px;
+  padding: auto;
+}
+
+@media (max-width: 768px) {
   #video-player {
-    width: 100%;
-    max-width: 900px; /* Limite máximo para o vídeo */
-    aspect-ratio: 16 / 9; /* Proporção padrão para vídeos */
-    background-color: black; /* Cor de fundo para áreas não preenchidas */
+    max-width: 100%; /* Preenche a largura da tela em dispositivos menores */
+    height: auto; /* Ajusta a altura automaticamente */
   }
-  
-  @media (max-width: 768px) {
-    #video-player {
-      max-width: 100%; /* Preenche a largura da tela em dispositivos menores */
-      height: auto; /* Ajusta a altura automaticamente */
-    }
-    .logo-title svg{
-        width: 10%;
-      }
+  .logo-title svg {
+    width: 10%;
   }
-
-  
-.logout{
-    color: #CF1A1A;
 }
 
-.logout:hover{
-    color: rgb(87, 9, 9);
+.logout {
+  color: #CF1A1A;
 }
 
-.navbar{
-    background-color: white;
+.logout:hover {
+  color: rgb(87, 9, 9);
 }
 
-.container-fluid{
-    background-color: white;
+.navbar {
+  background-color: white;
 }
 
-p{
-    color: white;
+.container-fluid {
+  background-color: white;
 }
 
-.logo-title{
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
-  }
-  
-  .logo-title svg{
-    width: 2%;
-    fill: white;
-    color: #ffffff;
-  }
-  
+.views{
+  font-size: 13px;
+  margin: 11px;
+}
+
+.box-views{
+  justify-content: left;
+  display:  flex;
+  align-items: center;
+  margin-top: 0;
+}
+svg{
+  width: 5%;
+  fill: #ffffff;
+  margin: 0;
+}
+
+
+.row {
+  background-color: #CF1A1A;
+  margin-top: 50px;
+}

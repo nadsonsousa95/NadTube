@@ -47,7 +47,7 @@ export class HomeComponent implements OnInit {
     );
   
     // Redireciona para a página do vídeo
-    this.router.navigate(['/exibe-video'], { queryParams: { url: video.url } });
+    this.router.navigate(['/exibe-video'], { queryParams: { url: video.url, id: video.id } });
   }
   
 
