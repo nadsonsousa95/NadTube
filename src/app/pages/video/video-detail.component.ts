@@ -88,9 +88,7 @@ export class VideoDetailComponent implements OnInit, AfterViewInit {
             controls: 1,
             rel: 0,
             modestbranding: 1,
-          },
-          width: '1000',
-          height: '600',
+          }
         });
       }
     }

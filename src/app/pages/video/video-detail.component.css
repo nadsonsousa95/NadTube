@@ -30,13 +30,15 @@ p {
 }
 
 #video-player {
-  width: 100%; /* O vídeo ocupa toda a largura */
-  height: 90vh; /* O vídeo ocupa quase toda a altura da tela */
-  aspect-ratio: unset; /* Remove a proporção fixa */
-  background-color: black;
-  margin: 0; /* Remove os espaçamentos */
+  width: 100%;
+  max-width: 1000px; /* Limite máximo para o vídeo */
+  aspect-ratio: 16 / 9; /* Proporção padrão para vídeos */
+  background-color: black; /* Cor de fundo para áreas não preenchidas */
+  margin-top: 0px; /* Espaço entre o player e as informações */
+  margin-bottom: 10px;
+  height: 100vh;
+  padding: 0;
 }
-
 
 .box-video-player{
   text-align: center;
