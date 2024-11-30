@@ -4,8 +4,8 @@
     justify-content: center;
     align-items: center;
     height: 100vh; /* Preenche toda a altura da tela */
-    background-color: #CF1A1A; /* Fundo claro para destacar o vídeo */
-    padding: 1rem;
+    background-color: #CF1A1A; 
+    padding-top: 0;
     box-sizing: border-box;
   }
   
@@ -15,17 +15,10 @@
     text-align: center;
     color: #ffffff;
   }
-
-  h1{
-    margin-bottom: 30px;
-    font-size: 1.5rem;
-    text-align: center;
-    color: #ffffff;
-  }
   
   #video-player {
     width: 100%;
-    max-width: 800px; /* Limite máximo para o vídeo */
+    max-width: 900px; /* Limite máximo para o vídeo */
     aspect-ratio: 16 / 9; /* Proporção padrão para vídeos */
     background-color: black; /* Cor de fundo para áreas não preenchidas */
   }
@@ -35,6 +28,9 @@
       max-width: 100%; /* Preenche a largura da tela em dispositivos menores */
       height: auto; /* Ajusta a altura automaticamente */
     }
+    .logo-title svg{
+        width: 10%;
+      }
   }
 
   
@@ -56,17 +52,17 @@
 
 p{
     color: white;
-    margin-top: 50%;
 }
 
 .logo-title{
     display: flex;
     justify-content: center;
-    margin: 20px;
+    margin-top: 20px;
   }
   
   .logo-title svg{
-    width: 3%;
+    width: 2%;
     fill: white;
+    color: #ffffff;
   }
   

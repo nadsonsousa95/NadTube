@@ -4,7 +4,7 @@ button{
     width: 50%;
 }
 
-button :disabled{
+button:disabled {
     background-color: #942101;
 }
 
@@ -17,13 +17,9 @@ button .registrar{
     color: #CF1A1A;
 }
 
-h1{
-    color: white;
-    margin: 15px;
-}
-
 p{
     color: white;
+    margin-top: 0;
 }
 
 .container-global {
@@ -75,4 +71,44 @@ form input[type='checkbox']{
 }
 .mb-3 form-check{
     justify-content: center;
+}
+
+.logo-title{
+    display: flex;
+    justify-content: center;
+    margin: 10px;
+  }
+  
+  .logo-title svg{
+    width: 2.5%;
+    fill: white;
+    color: #ffffff;
+  }
+
+  /* Media query para telas menores */
+@media (max-width: 768px) {
+    .container-global {
+        padding: 10px;
+    }
+
+    form {
+        padding: 60px 40px;
+        width: 90%; /* Ocupa toda a largura disponível */
+    }
+
+    form input[type='password'], input[type='email'] {
+        width: 100%; /* Ajustado para caber na tela */
+    }
+
+    button {
+        width: 100%; /* Botão ocupa toda a largura */
+    }
+
+    .logo-title h1 {
+        font-size: 30px; /* Texto menor em telas menores */
+    }
+
+    .logo-title svg {
+        width: 5%; /* Ajustado para não ocupar muito espaço */
+    }
 }

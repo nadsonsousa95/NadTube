@@ -128,3 +128,9 @@ svg{
 .logo-title svg{
   width: 3%;
 }
+
+@media (max-width: 768px) {
+  .logo-title svg{
+    width: 5.5%;
+  }
+}
