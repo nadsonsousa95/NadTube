@@ -42,10 +42,6 @@ Veja o protótipo da interface no Figma:
 - **Gerenciamento de Rotas**: Angular Router.
 - **Prototipagem**: Figma.
 
----
-
-## 📦 **Como Rodar o Projeto Localmente**
-
 ### Pré-requisitos
 - [Node.js](https://nodejs.org/)
 - [Angular CLI](https://angular.io/cli)
