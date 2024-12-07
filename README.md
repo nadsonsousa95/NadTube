@@ -42,20 +42,44 @@ Veja o protótipo da interface no Figma:
 - **Gerenciamento de Rotas**: Angular Router.
 - **Prototipagem**: Figma.
 
+![image](https://github.com/user-attachments/assets/f5d812e4-2141-4059-bacf-4f264442b6ac)
+
 ### Pré-requisitos
 - [Node.js](https://nodejs.org/)
 - [Angular CLI](https://angular.io/cli)
 - [JSON-Server](https://github.com/typicode/json-server)
 ---
+## Como Rodar o Projeto
 
-![image](https://github.com/user-attachments/assets/f5d812e4-2141-4059-bacf-4f264442b6ac)
-Login para teste:
-Email: alice.silva@example.com, 
-Senha: 654321
+Siga as etapas abaixo para clonar e executar o projeto localmente:
 
+### Passo a Passo
 
+1. **Clone o repositório**
+   ```bash
+   git clone https://github.com/nadsonsousa95/NadTube.git
 
+2. **Acesse o diretório**
+   ```bash
+   cd NadTube
+   
+3. **Instale as dependências**
+   ```bash
+   npm install
 
+4. **Inicie o JSON-Server**
+   ```bash
+   npm install -g json-server
+   json-server --watch db.json --port 3000
+
+ 5. **Inicie a aplicação Angular**
+    ```bash
+    ng serve
+
+ Login para teste:
+ Email: alice.silva@example.com
+ Senha: 654321
+  
 ## 🛡️ **Licença**
 
 Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
